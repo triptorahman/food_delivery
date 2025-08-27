@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained()->cascadeOnDelete();
             $table->foreignId('delivery_man_id')->constrained('delivery_men')->cascadeOnDelete();
-            $table->enum('status', ['pending', 'accepted', 'rejected', 'expired'])->default('pending');
+            $table->enum('status', ['pending', 'accepted', 'rejected', 'expired', 'completed'])->default('pending');
             $table->timestamp('responded_at')->nullable();
             $table->timestamps();
             $table->unique(['order_id', 'delivery_man_id']);

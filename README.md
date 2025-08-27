@@ -6,7 +6,7 @@ A Laravel-based backend for a food delivery platform, creating restaurant delive
 
 - PHP >= 8.2
 - Composer
-- MySQL
+- MySQL = 8.0
 - Laravel = 12.x
 
 ## Setup Instructions

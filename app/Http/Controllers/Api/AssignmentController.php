@@ -8,6 +8,38 @@ use Illuminate\Http\Request;
 
 class AssignmentController extends Controller
 {
+    public function complete(Request $request, $assignmentId)
+    {
+        $driver = auth()->user()->deliveryMan;
+        $assignment = DeliveryAssignment::findOrFail($assignmentId);
+
+        // Ensure only the assigned driver can complete
+        if ($assignment->delivery_man_id !== $driver->id) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        if ($assignment->status !== 'accepted') {
+            return response()->json(['message' => 'Assignment cannot be completed.'], 422);
+        }
+
+        $assignment->update(['status' => 'completed']);
+
+        // Update order status
+        $order = $assignment->order;
+        $order->update(['status' => 'delivered']);
+
+        // Notify customer that order is delivered
+        $customer = $order->user;
+        if ($customer) {
+            $customer->notify(new \App\Notifications\OrderDelivered($order));
+        }
+
+        return response()->json([
+            'message' => 'Assignment completed.',
+            'assignment' => $assignment,
+            'order' => $order,
+        ]);
+    }
     public function accept(Request $request, $assignmentId)
     {
         $driver = auth()->user()->deliveryMan;
@@ -27,9 +59,9 @@ class AssignmentController extends Controller
 
         // Update order status
         $order = $assignment->order;
-        $order->update(['status' => 'in_progress']);
+        $order->update(['status' => 'assigned']);
 
-        // Notify customer that order is in progress
+        // Notify customer that order is assigned to Delivery man
         $customer = $order->user;
         if ($customer) {
             $customer->notify(new \App\Notifications\OrderInProgress($order));

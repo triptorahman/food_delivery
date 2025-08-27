@@ -27,4 +27,5 @@ Route::middleware('auth:sanctum')->group(function () {
     // Driver accepts / rejects
     Route::post('/assignments/{assignment}/accept', [AssignmentController::class, 'accept'])->middleware('delivery.man');
     Route::post('/assignments/{assignment}/reject', [AssignmentController::class, 'reject'])->middleware('delivery.man');
+    Route::post('/assignments/{assignment}/complete', [AssignmentController::class, 'complete'])->middleware('delivery.man');
 });
