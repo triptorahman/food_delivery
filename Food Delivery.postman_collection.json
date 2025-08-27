@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f32725c3-1454-42a5-bfdf-1d66476c7afa",
+		"_postman_id": "644b5bba-b1b4-4bb8-8dee-4f5434dfc668",
 		"name": "Food Delivery",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29834014"
+		"_exporter_id": "47931012"
 	},
 	"item": [
 		{
@@ -96,7 +96,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": [
 						{
 							"key": "Host",
@@ -226,19 +226,11 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "",
 					"header": [
 						{
 							"key": "Host",
 							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Aug 2025 06:35:24 GMT"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Aug 2025 06:35:24 GMT"
 						},
 						{
 							"key": "Connection",
@@ -246,11 +238,15 @@
 						},
 						{
 							"key": "X-Powered-By",
-							"value": "PHP/8.2.7"
+							"value": "PHP/8.2.12"
 						},
 						{
 							"key": "Cache-Control",
 							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:05:26 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -262,7 +258,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"access_token\": \"1|2LbZNFZcEIIHfGvGMyXpgc7O9tGg3tPjcqDWlbjv27c8cef5\",\n    \"token_type\": \"Bearer\"\n}"
+					"body": "{\n    \"message\": \"Login successful\",\n    \"access_token\": \"1|KVwH5DMUvA7sB2seGq9zFWuqvXVxQHwZ00Vet96H06739458\",\n    \"token_type\": \"Bearer\"\n}"
 				}
 			]
 		},
@@ -322,7 +318,75 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login [Customer]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"customer@gmail.com\",\r\n    \"password\": \"customer123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:06:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\",\n    \"access_token\": \"2|4UblYJFr8TT67bgSFQcamHyQRFT5Zg1EVc4fdx7db3e9010c\",\n    \"token_type\": \"Bearer\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Login [Delivery Man]",
@@ -362,7 +426,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"deliveryman@gmail.com\",\r\n    \"password\": \"delivery123\"\r\n}",
+					"raw": "{\r\n    \"email\": \"deliveryman1@gmail.com\",\r\n    \"password\": \"delivery123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -380,7 +444,75 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login [Delivery Man]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"deliveryman1@gmail.com\",\r\n    \"password\": \"delivery123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:07:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\",\n    \"access_token\": \"3|aJjZzG3Qqxqimi50baKaS9wteXKh9yDiZKkjBaFeefef15a4\",\n    \"token_type\": \"Bearer\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Logout",
@@ -414,7 +546,134 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Logout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:06:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged out successfully\"\n}"
+				},
+				{
+					"name": "Logout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:06:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged out successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Restaurant Create [For Owner}",
@@ -458,7 +717,7 @@
 			},
 			"response": [
 				{
-					"name": "Restaurant Create",
+					"name": "Restaurant Create [For Owner}",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
@@ -494,19 +753,11 @@
 					},
 					"status": "Created",
 					"code": 201,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "",
 					"header": [
 						{
 							"key": "Host",
 							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Aug 2025 09:36:15 GMT"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Aug 2025 09:36:15 GMT"
 						},
 						{
 							"key": "Connection",
@@ -514,11 +765,15 @@
 						},
 						{
 							"key": "X-Powered-By",
-							"value": "PHP/8.2.7"
+							"value": "PHP/8.2.12"
 						},
 						{
 							"key": "Cache-Control",
 							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:05:44 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -530,7 +785,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"success\": true,\n    \"message\": \"Restaurant created successfully.\",\n    \"restaurant\": {\n        \"name\": \"Rampura Bridge FoodCart\",\n        \"address\": \"Rampura Bridge\",\n        \"phone\": \"1234567890\",\n        \"owner_id\": 3,\n        \"updated_at\": \"2025-08-27T09:36:15.000000Z\",\n        \"created_at\": \"2025-08-27T09:36:15.000000Z\",\n        \"id\": 1\n    }\n}"
+					"body": "{\n    \"success\": true,\n    \"message\": \"Restaurant created successfully.\",\n    \"restaurant\": {\n        \"name\": \"Rampura Bridge FoodCart\",\n        \"address\": \"Rampura Bridge\",\n        \"phone\": \"1234567890\",\n        \"owner_id\": 3,\n        \"updated_at\": \"2025-08-27T17:05:44.000000Z\",\n        \"created_at\": \"2025-08-27T17:05:44.000000Z\",\n        \"id\": 1\n    }\n}"
 				}
 			]
 		},
@@ -620,7 +875,81 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Restaurant Zone Create [Owner] [Radius]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"radius\",\r\n  \"center_lat\": 23.76803,\r\n  \"center_lng\": 90.42334,\r\n  \"radius_km\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/restaurants/1/zones",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"restaurants",
+								"1",
+								"zones"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:05:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Delivery zone saved successfully.\",\n    \"zone\": {\n        \"restaurant_id\": 1,\n        \"type\": \"radius\",\n        \"center\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                90.42334,\n                23.76803\n            ]\n        },\n        \"radius_km\": 5,\n        \"active\": true,\n        \"updated_at\": \"2025-08-27T17:05:55.000000Z\",\n        \"created_at\": \"2025-08-27T17:05:55.000000Z\",\n        \"id\": 1\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Restaurant Order [Customer}",
@@ -662,10 +991,82 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Restaurant Order [Customer}",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"restaurant_id\": 1,\r\n  \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\r\n  \"lat\": 23.766467,\r\n  \"lng\": 90.424041\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:06:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"order\": {\n        \"id\": 1,\n        \"restaurant_id\": 1,\n        \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\n        \"delivery_point\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                90.424041,\n                23.766467\n            ]\n        },\n        \"status\": \"awaiting_driver\",\n        \"assigned_delivery_man_id\": null,\n        \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"updated_at\": \"2025-08-27T17:06:34.000000Z\"\n    },\n    \"assignment\": {\n        \"order_id\": 1,\n        \"delivery_man_id\": 2,\n        \"status\": \"pending\",\n        \"updated_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"id\": 1,\n        \"order\": {\n            \"id\": 1,\n            \"restaurant_id\": 1,\n            \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\n            \"delivery_point\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    90.424041,\n                    23.766467\n                ]\n            },\n            \"status\": \"awaiting_driver\",\n            \"assigned_delivery_man_id\": null,\n            \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n            \"updated_at\": \"2025-08-27T17:06:34.000000Z\"\n        }\n    }\n}"
+				}
+			]
 		},
 		{
-			"name": "DeliverMan Accept Order [Delivery Man]",
+			"name": "DeliveryMan Accept Order [Delivery Man]",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {
 					"accept": true
@@ -697,10 +1098,175 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "DeliveryMan Accept Order [Delivery Man]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/assignments/1/accept",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"assignments",
+								"1",
+								"accept"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:07:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Assignment accepted.\",\n    \"assignment\": {\n        \"id\": 1,\n        \"order_id\": 1,\n        \"delivery_man_id\": 2,\n        \"status\": \"accepted\",\n        \"responded_at\": null,\n        \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"updated_at\": \"2025-08-27T17:07:10.000000Z\",\n        \"order\": {\n            \"id\": 1,\n            \"restaurant_id\": 1,\n            \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\n            \"delivery_point\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    90.424041,\n                    23.766467\n                ]\n            },\n            \"status\": \"assigned\",\n            \"assigned_delivery_man_id\": null,\n            \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n            \"updated_at\": \"2025-08-27T17:07:10.000000Z\"\n        }\n    },\n    \"order\": {\n        \"id\": 1,\n        \"restaurant_id\": 1,\n        \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\n        \"delivery_point\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                90.424041,\n                23.766467\n            ]\n        },\n        \"status\": \"assigned\",\n        \"assigned_delivery_man_id\": null,\n        \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"updated_at\": \"2025-08-27T17:07:10.000000Z\"\n    }\n}"
+				}
+			]
 		},
 		{
-			"name": "DeliverMan Reject Order [DeliveryMan]",
+			"name": "DeliveryMan Delivered Order [Delivery Man]",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/assignments/1/complete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"assignments",
+						"1",
+						"complete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeliveryMan Delivered Order [Delivery Man]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/assignments/1/complete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"assignments",
+								"1",
+								"complete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 17:07:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Assignment completed.\",\n    \"assignment\": {\n        \"id\": 1,\n        \"order_id\": 1,\n        \"delivery_man_id\": 2,\n        \"status\": \"completed\",\n        \"responded_at\": null,\n        \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"updated_at\": \"2025-08-27T17:07:22.000000Z\",\n        \"order\": {\n            \"id\": 1,\n            \"restaurant_id\": 1,\n            \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\n            \"delivery_point\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    90.424041,\n                    23.766467\n                ]\n            },\n            \"status\": \"delivered\",\n            \"assigned_delivery_man_id\": null,\n            \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n            \"updated_at\": \"2025-08-27T17:07:22.000000Z\"\n        }\n    },\n    \"order\": {\n        \"id\": 1,\n        \"restaurant_id\": 1,\n        \"delivery_address\": \"House 12, Road 7, Dhanmondi\",\n        \"delivery_point\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                90.424041,\n                23.766467\n            ]\n        },\n        \"status\": \"delivered\",\n        \"assigned_delivery_man_id\": null,\n        \"created_at\": \"2025-08-27T17:06:34.000000Z\",\n        \"updated_at\": \"2025-08-27T17:07:22.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "DeliveryMan Reject Order [DeliveryMan]",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {
 					"accept": true
@@ -729,6 +1295,94 @@
 						"assignments",
 						"2",
 						"reject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeliveryMan Update Location [Delivery Man]",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"lat\": 23.766467,\r\n  \"lng\": 90.424041\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/deliveryman/location/update",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deliveryman",
+						"location",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeliveryMan Availability Status Update [Delivery Man]",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/deliveryman/status/update",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deliveryman",
+						"status",
+						"update"
 					]
 				}
 			},
