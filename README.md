@@ -13,7 +13,7 @@ A Laravel-based backend for a food delivery platform, creating restaurant delive
 
 1. **Clone the repository**
    ```
-   git clone <your-repo-url>
+   git clone https://github.com/triptorahman/food_delivery.git
    cd food_delivery
    ```
 2. **Install dependencies**
